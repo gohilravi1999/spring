@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+               
+<bean id="addressbean" class="com.ConstructorInjection.Address">
+<constructor-arg value="Wadhwan"></constructor-arg>
+<constructor-arg value="Gujarat"></constructor-arg>
+<constructor-arg value="India"></constructor-arg>
+</bean>
+
+<bean id="employeebean" class="com.ConstructorInjection.Employee">
+<constructor-arg value="1" type="int"></constructor-arg>
+<constructor-arg value="Ravi"></constructor-arg>
+<constructor-arg><ref bean="addressbean"/></constructor-arg>
+</bean>
+
+<bean id="collectionbean" class="com.ConstructorInjection.ConstructorInjectionWithCollection">
+<constructor-arg value="1" type="int"></constructor-arg>
+<constructor-arg value="What is java?"></constructor-arg>  
+<constructor-arg>  
+<list>  
+<value>Java is a programming language</value>  
+<value>Java is a Platform Independent language</value>   
+</list>  
+</constructor-arg>  
+</bean>
+
+</beans>
